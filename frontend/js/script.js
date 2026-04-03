@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. LÓGICA DE BUSCA DE CEP (VIACEP)
     if (cepInput) {
-        cepInput.addEventListener('blur', function() {
+        cepInput.addEventListener('blur', function () {
             const cep = this.value.replace(/\D/g, '');
-            
+
             if (cep.length === 8) {
                 console.log("Buscando CEP:", cep);
                 fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. LÓGICA DE ENVIO DO FORMULÁRIO (CORRIGINDO REGRESSÃO)
     if (form) {
-        form.addEventListener('submit', async function(event) {
+        form.addEventListener('submit', async function (event) {
             // ESSENCIAL: Impede o recarregamento da página
-            event.preventDefault(); 
+            event.preventDefault();
             console.log("Evento de envio capturado. Iniciando requisição...");
 
             const formData = {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Certifique-se que o backend está rodando na porta 3000
-                const response = await fetch('http://127.0.0.1:3000/enviar-lead', {
+                const response = await fetch('https://everest-backend-fs5k.onrender.com/enviar-lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (result.success) {
                     alert('Sucesso! Recebemos seu interesse.');
-                    form.reset(); 
+                    form.reset();
                 } else {
                     alert('Erro no servidor: ' + result.message);
                 }
