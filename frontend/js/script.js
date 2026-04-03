@@ -29,12 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. LÓGICA DE ENVIO DO FORMULÁRIO (CORRIGINDO REGRESSÃO)
+    // 2. LÓGICA DE ENVIO DO FORMULÁRIO
     if (form) {
         form.addEventListener('submit', async function (event) {
-            // ESSENCIAL: Impede o recarregamento da página
             event.preventDefault();
-            console.log("Evento de envio capturado. Iniciando requisição...");
+
+            // 1. Captura o botão e salva o texto original
+            const btnSubmit = document.querySelector('[data-cy="btn-submit"]');
+            const btnTextoOriginal = btnSubmit.innerHTML;
+
+            // 2. Aplica o estado de "Loading" (Trava o botão)
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = 'Enviando... <span class="animate-pulse">⏳</span>';
+            btnSubmit.classList.add('opacity-50', 'cursor-wait');
 
             const formData = {
                 nome: document.getElementById('nome').value,
@@ -48,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                // Certifique-se que o backend está rodando na porta 3000
                 const response = await fetch('https://everest-backend-fs5k.onrender.com/enviar-lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -65,10 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Erro na requisição:', error);
-                alert('Erro: Não foi possível conectar ao backend. Verifique se o servidor está rodando.');
+                alert('Erro: Não foi possível conectar ao backend. Verifique a conexão.');
+            } finally {
+                // 3. Libera o botão novamente, independentemente de dar erro ou sucesso
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = btnTextoOriginal;
+                btnSubmit.classList.remove('opacity-50', 'cursor-wait');
             }
         });
-    } else {
-        console.error("ERRO DE QA: Formulário 'leadForm' não encontrado no DOM.");
-    }
+    };
 });
