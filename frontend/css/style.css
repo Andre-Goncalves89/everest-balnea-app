@@ -1,0 +1,11 @@
+/* Configuração das fontes globais da Everest Banheiras */
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+h1, h2, h3 { 
+    font-family: 'Playfair Display', serif; 
+}
+
+/* Você pode adicionar futuras estilizações personalizadas aqui, 
+   caso o Tailwind não cubra alguma necessidade específica do QA/Design */

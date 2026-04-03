@@ -1,36 +1,49 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
-
 const app = express();
+const port = process.env.PORT || 3000;
 
-//Middlewares
+// Configuração de CORS (Essencial para o deploy Vercel + Render)
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.json({ message: 'API Everest banheiras rodando 100%' })
-});
+// Rota para receber os leads (Task #2: Formulário com Endereço)
+app.post('/enviar-lead', (req, res) => {
+    const { 
+        nome, 
+        email, 
+        whatsapp, 
+        cep, 
+        logradouro, 
+        numero, 
+        bairro, 
+        cidade 
+    } = req.body;
 
-// Rota principal
-app.post('/api/leads', (req, res) => {
-    const { nome, telefone, email, modelo } = req.body;
+    // Log de QA: Validando se os dados chegaram completos
+    console.log('--- NOVO LEAD RECEBIDO ---');
+    console.log(`Cliente: ${nome} | E-mail: ${email}`);
+    console.log(`Contato: ${whatsapp}`);
+    console.log(`Endereço: ${logradouro}, ${numero} - ${bairro}, ${cidade} (CEP: ${cep})`);
+    console.log('---------------------------');
 
-    // Simulando o recebimento no terminal
-    console.log(`🎯 [NOVO LEAD] Nome: ${nome} | whatsapp: ${telefone} | email: ${email} | modelo: ${modelo}`)
+    // Simulação de Validação (QA Mindset)
+    if (!nome || !email || !whatsapp || !cep) {
+        return res.status(400).json({ 
+            success: false, 
+            message: 'Erro: Campos obrigatórios ausentes.' 
+        });
+    }
 
-    /* Aqui no futuro entrará o código nodemailer para disparar o email
-    ...
-    */
-   
-    // Resposta de sucesso para o frontend
-    res.status(200).json({
-        success: true,
-        message: 'Lead capturado com sucesso, entraremos em contato!'
+    // Aqui futuramente integraremos com o PostgreSQL ou serviço de E-mail
+    // Por enquanto, enviamos sucesso para o Frontend
+    res.status(200).json({ 
+        success: true, 
+        message: 'Lead recebido com sucesso! O cálculo de frete será enviado em breve.' 
     });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`🚀 Servidor da Everest banheira rodando na porta ${PORT}`);
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
+    console.log(`Pronto para receber leads do projeto Everest.`);
 });

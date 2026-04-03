@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-cy="page-title">Everest Banheiras | Luxo e Relaxamento</title>
+
+    <meta name="description" content="O ápice do relaxamento na sua casa com a Everest Banheiras.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'everest-gold': '#D4AF37', 'everest-black': '#0a0a0a', 'everest-silver': '#C0C0C0' },
+                    fontFamily: { 'serif': ['Playfair Display', 'serif'], 'sans': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-everest-black font-sans text-white antialiased">
+
+    <header class="border-b border-white/5 sticky top-0 bg-everest-black/95 backdrop-blur-md z-50">
+        <nav class="max-w-[1440px] mx-auto px-10 py-6 grid grid-cols-3 items-center" data-cy="nav-principal">
+            <div class="justify-self-start flex items-center" data-cy="logo-container">
+                <a href="/" class="block">
+                    <img src="img/everest-logo.png" alt="Everest Banheiras - Logotipo Oficial" data-cy="img-logo"
+                        class="h-10 md:h-12 w-auto object-contain hover:opacity-80 transition-opacity">
+                </a>
+            </div>
+
+            <ul
+                class="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.2em] font-semibold text-everest-silver justify-self-center">
+                <li><a href="#modelos" class="hover:text-everest-gold transition-colors"
+                        data-cy="nav-link-modelos">Modelos</a></li>
+                <li><a href="#diferenciais" class="hover:text-everest-gold transition-colors"
+                        data-cy="nav-link-diferenciais">Diferenciais</a></li>
+                <li><a href="#leads" class="hover:text-everest-gold transition-colors" data-cy="nav-link-contato">Fale
+                        Conosco</a></li>
+            </ul>
+
+            <div class="justify-self-end">
+                <a href="#leads" data-cy="nav-btn-orcamento"
+                    class="bg-everest-gold text-black px-8 py-3 text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300">
+                    Orçamento Rápido
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="w-full text-center pt-10 pb-4" data-cy="sub-branding-container">
+        <h2 class="font-serif text-3xl md:text-4xl tracking-[0.25em] font-bold">
+            <span class="text-everest-gold uppercase">Everest</span>
+            <span class="text-white uppercase ml-2">Balnea</span>
+        </h2>
+        <div class="w-24 h-[1px] bg-everest-gold/30 mx-auto mt-4"></div>
+    </div>
+
+    <section class="relative min-h-[90vh] flex items-center justify-center px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="font-serif text-6xl md:text-8xl mb-8 leading-[1.1]" data-cy="hero-titulo">
+                O ápice do <span class="text-everest-gold italic font-normal">relaxamento</span> <br> na sua casa.
+            </h1>
+            <p class="text-everest-silver text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                Descubra a linha exclusiva da Everest Balnea. Design sofisticado, alta durabilidade e o conforto que
+                você merece!
+            </p>
+            <a href="#modelos" data-cy="btn-hero-explore"
+                class="inline-block border border-everest-gold text-everest-gold px-14 py-5 uppercase text-[10px] tracking-[0.4em] font-bold hover:bg-everest-gold hover:text-black transition-all">
+                Conhecer a Coleção
+            </a>
+        </div>
+    </section>
+
+    <section id="modelos" class="py-32 px-10 bg-[#080808]" data-cy="secao-modelos">
+        <div class="max-w-[1440px] mx-auto">
+            <h2 class="font-serif text-5xl text-center mb-24" data-cy="titulo-modelos">
+                Coleção <span class="text-everest-gold italic">Exclusiva</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <article
+                    class="group text-center p-4 border border-transparent hover:border-everest-gold transition-all duration-500"
+                    data-cy="card-modernita">
+                    <div class="overflow-hidden mb-8 aspect-[4/3]">
+                        <img src="img/banheira-dupla-moderna-luxo-spa-everest.webp" alt="Banheira Modernità"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                    </div>
+                    <h3 class="text-2xl font-serif mb-3">Modernità Dupla</h3>
+                    <p class="text-everest-silver text-sm leading-relaxed mb-8 px-4">Design contemporâneo com acabamento
+                        em acrílico premium.</p>
+                    <a href="#leads"
+                        class="inline-block border border-everest-gold text-everest-gold px-10 py-3 text-[10px] tracking-widest font-bold hover:bg-everest-gold hover:text-black transition-all">SOLICITAR
+                        COTAÇÃO</a>
+                </article>
+
+                <article
+                    class="group text-center p-4 border border-transparent hover:border-everest-gold transition-all duration-500"
+                    data-cy="card-piacenza">
+                    <div class="overflow-hidden mb-8 aspect-[4/3]">
+                        <img src="img/ofuro-duplo-piacenza-luxo.webp" alt="Ofurô Piacenza"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                    </div>
+                    <h3 class="text-2xl font-serif mb-3">Ofurô Piacenza</h3>
+                    <p class="text-everest-silver text-sm leading-relaxed mb-8 px-4">Ergonomia e tradição integrada ao
+                        ambiente de luxo.</p>
+                    <a href="#leads"
+                        class="inline-block border border-everest-gold text-everest-gold px-10 py-3 text-[10px] tracking-widest font-bold hover:bg-everest-gold hover:text-black transition-all">SOLICITAR
+                        COTAÇÃO</a>
+                </article>
+
+                <article
+                    class="group text-center p-4 border border-transparent hover:border-everest-gold transition-all duration-500"
+                    data-cy="card-copacabana">
+                    <div class="overflow-hidden mb-8 aspect-[4/3]">
+                        <img src="img/spa-copacabana-7-lugares-cobertura.webp" alt="Spa Copacabana"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                    </div>
+                    <h3 class="text-2xl font-serif mb-3">Spa Copacabana</h3>
+                    <p class="text-everest-silver text-sm leading-relaxed mb-8 px-4">O ápice do lazer para 7 pessoas em
+                        áreas externas.</p>
+                    <a href="#leads"
+                        class="inline-block border border-everest-gold text-everest-gold px-10 py-3 text-[10px] tracking-widest font-bold hover:bg-everest-gold hover:text-black transition-all">SOLICITAR
+                        COTAÇÃO</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="leads" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto bg-[#0f0f0f] p-16 border border-white/5 shadow-2xl">
+            <h2 class="font-serif text-4xl text-center mb-4 italic">Solicite seu Orçamento Especializado</h2>
+            <p class="text-center text-everest-silver text-sm mb-12">Faturamento direto e cálculo de frete técnico por
+                CEP.</p>
+
+            <form id="leadForm" class="space-y-10" data-cy="lead-form">
+                <input type="text" id="nome" data-cy="input-nome" placeholder="Nome Completo" required
+                    class="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold transition-all">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <input type="email" id="email" data-cy="input-email" placeholder="E-mail" required
+                        class="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold">
+                    <input type="tel" id="whatsapp" data-cy="input-whatsapp" placeholder="WhatsApp (DDD)" required
+                        class="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold">
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                    <input type="text" id="cep" data-cy="input-cep" placeholder="CEP" maxlength="8" required
+                        class="bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold text-everest-gold font-bold">
+                    <input type="text" id="logradouro" data-cy="input-logradouro" placeholder="Logradouro" readonly
+                        class="md:col-span-2 bg-transparent border-b border-white/5 p-4 text-everest-silver/50 cursor-not-allowed">
+                    <input type="text" id="numero" data-cy="input-numero" placeholder="Nº" required
+                        class="bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <input type="text" id="bairro" data-cy="input-bairro" placeholder="Bairro" readonly
+                        class="w-full bg-transparent border-b border-white/5 p-4 text-everest-silver/50 cursor-not-allowed">
+                    <input type="text" id="cidade" data-cy="input-cidade" placeholder="Cidade" readonly
+                        class="w-full bg-transparent border-b border-white/5 p-4 text-everest-silver/50 cursor-not-allowed">
+                </div>
+
+                <button type="submit" data-cy="btn-submit"
+                    class="w-full py-6 bg-everest-gold text-black font-bold uppercase tracking-[0.3em] text-xs hover:bg-white transition-all duration-500">
+                    Tenho Interesse
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-everest-black pt-24 pb-12 px-10 border-t border-white/5" data-cy="footer">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+            <div class="md:col-span-5">
+                <h4 class="text-everest-gold font-serif text-2xl mb-8 tracking-widest">EVEREST</h4>
+                <p class="text-everest-silver leading-relaxed max-w-sm font-light">Elevando o padrão de conforto e
+                    sofisticação em hidromassagem para sua casa.</p>
+            </div>
+            <div class="md:col-span-4">
+                <h4 class="text-white font-bold mb-8 uppercase tracking-[0.2em] text-[10px]">Atendimento</h4>
+                <p class="text-everest-silver mb-3">(11) 96713 - 7807</p>
+                <p class="text-everest-silver">contato@everestbalnea.com.br</p>
+            </div>
+            <div class="md:col-span-3">
+                <h4 class="text-white font-bold mb-8 uppercase tracking-[0.2em] text-[10px]">Navegação</h4>
+                <ul class="space-y-4 text-everest-silver font-light text-xs">
+                    <li><a href="#modelos" class="hover:text-everest-gold transition-colors">Coleção Exclusiva</a></li>
+                    <li><a href="#leads" class="hover:text-everest-gold transition-colors">Solicitar Orçamento</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1440px] mx-auto border-t border-white/5 pt-12 flex justify-between items-center">
+            <div class="text-[9px] text-everest-silver/40 uppercase tracking-[0.4em]">&copy; 2026 EVEREST BALNEA.
+            </div>
+            <div class="text-[9px] text-everest-silver/40 uppercase tracking-[0.4em]">ENGINEERED BY <span
+                    class="text-everest-gold/80 font-bold">TECHNOVA QUALITY LAB</span></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511967137807" target="_blank"
+        class="fixed bottom-10 right-10 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all z-[100]"
+        data-cy="btn-whatsapp-float">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
