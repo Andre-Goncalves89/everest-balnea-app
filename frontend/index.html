@@ -139,13 +139,16 @@
                 CEP.</p>
 
             <form id="leadForm" class="space-y-10" data-cy="lead-form">
-                <input type="text" id="nome" data-cy="input-nome" placeholder="Nome Completo" required minlength="3" maxlength="100"
+                <input type="text" id="nome" data-cy="input-nome" placeholder="Nome Completo" required minlength="3"
+                    maxlength="100"
                     class="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold transition-all">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <input type="email" id="email" data-cy="input-email" placeholder="E-mail" required minlength="5" maxlength="100"
+                    <input type="email" id="email" data-cy="input-email" placeholder="E-mail" required minlength="5"
+                        maxlength="100"
                         class="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold">
                     <input type="tel" id="whatsapp" data-cy="input-whatsapp" placeholder="WhatsApp (DDD)" required
+                        pattern="[0-9]{10,11}" title="Digite um número válido com DDD (10 ou 11 dígitos)"
                         class="w-full bg-transparent border-b border-white/20 p-4 outline-none focus:border-everest-gold">
                 </div>
 
