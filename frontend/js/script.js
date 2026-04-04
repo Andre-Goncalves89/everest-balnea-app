@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Higienização do campo WhatsApp (Permite apenas números)
+    const whatsappInput = document.getElementById('whatsapp');
+    if (whatsappInput) {
+        whatsappInput.addEventListener('input', function () {
+            // Substitui qualquer caractere que NÃO seja dígito (\D) por vazio ('')
+            this.value = this.value.replace(/\D/g, '');
+        });
+    }
+
     // 2. LÓGICA DE ENVIO DO FORMULÁRIO
     if (form) {
         form.addEventListener('submit', async function (event) {
