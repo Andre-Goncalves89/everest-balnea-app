@@ -9,43 +9,43 @@ describe('Funcionalidade: Captura de Leads (Formulário Everest Balnea)', () => 
         { 
             descricao: 'Caminho feliz! - Todos os dados válidos', 
             nome: 'Robô Cypress', email: 'test@qa.com.br', whatsapp: '11988887777', 
-            cep: '02417040', rua: 'Clóvis Cunha Canto', numero: '100', 
+            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '100', 
             devePassar: true 
         },
         { 
             descricao: 'Falha - email com formato inválido', 
             nome: 'Robô Cypress', email: 'email_sem_arroba.com', whatsapp: '11988887777', 
-            cep: '02417040', rua: 'Clóvis Cunha Canto', numero: '150', 
+            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '150', 
             devePassar: false 
         },
         { 
             descricao: 'Falha - Nome com menos de três caracteres', 
             nome: 'ab', email: 'ab@c.com', whatsapp: '11988887777', 
-            cep: '02417040', rua: 'Clóvis Cunha Canto', numero: '120', 
+            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '120', 
             devePassar: false 
         },
         { 
             descricao: 'Falha - email com menos de cinco caracteres', 
             nome: 'Ana', email: 'a@b.', whatsapp: '11988887777', 
-            cep: '02417040', rua: 'Clóvis Cunha Canto', numero: '100', 
+            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '100', 
             devePassar: false 
         },
         { 
             descricao: 'Falha - whatsapp com menos de 10 caracteres', 
             nome: 'Robô Cypress', email: 'robo@cypress.com', whatsapp: '119888777', 
-            cep: '02417040', rua: 'Clóvis Cunha Canto', numero: '120', 
+            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '120', 
             devePassar: false 
         },
         { 
             descricao: 'Falha - whatsapp com mais de 11 caracteres', 
             nome: 'Robô Cypress', email: 'robo@cypress.com', whatsapp: '119888777777', 
-            cep: '02417040', rua: 'Clóvis Cunha Canto', numero: '120', 
+            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '120', 
             devePassar: false 
         },
         { 
             descricao: 'Falha - Campo de email ou nome com caracteres maliciosos', 
             nome: '...', email: 'robocypress@test.com', whatsapp: '11988877777', 
-            cep: '02417040', rua: 'Clóvis Cunha Canto', numero: '120', 
+            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '120', 
             devePassar: false 
         }
     ];
