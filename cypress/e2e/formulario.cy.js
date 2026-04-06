@@ -55,6 +55,17 @@ describe('Funcionalidade: Captura de Leads (Formulário Everest Balnea)', () => 
         // DADO (Given) - O estado inicial do sistema
         // ==========================================
         // Dado que a página do formulário é acessada limpa antes de cada cenário
+        cy.intercept('GET', 'https://viacep.com.br/ws/*/json/', {
+            statusCode: 200,
+            body: {
+                cep: "02417040",
+                logradouro: "Rua Clóvis Cunha Canto",
+                bairro: "Jardim Paraiso",
+                localidade: "São Paulo",
+                uf: "SP"
+            }
+        }).as('viaCepMock');
+
         formularioPage.acessarPagina();
     });
 
