@@ -28,12 +28,17 @@ describe('Formulário de Leads - Everest Balnea - Teste de regressão em massa',
             devePassar: false
         },
         {
+            descricao: 'Falha - email com menos de cinco caracteres',
+            nome: 'Ana', email: 'a@b.c'
+        },
+        
+        {
             descricao: 'Falha - whatsapp com menos de 10 caracteres',
             nome: 'Robô cypress', email: 'robo@cypress.com', whatsapp: '119888777',
             devePassar: false
         },
         {
-            descricao: 'Falha - whatsapp com menos de 10 caracteres',
+            descricao: 'Falha - whatsapp com mais de 11 caracteres',
             nome: 'Robô cypress', email: 'robo@cypress.com', whatsapp: '119888777777',
             devePassar: false
         }
