@@ -1,0 +1,27 @@
+{
+  "name": "everest-banheiras",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Andre-Goncalves89/everest-balnea-app/issues"
+  },
+  "homepage": "https://github.com/Andre-Goncalves89/everest-balnea-app#readme",
+  "devDependencies": {
+    "cypress": "^15.13.0"
+  }
+}
