@@ -36,6 +36,8 @@ class FormularioPage {
 
         // Lógica de digitar o cep, dar o blur e validar o logradouro
         cy.get(this.SELETORES.cepField).type(cep).blur();
+        // CULTURA DE QUALIDADE: Aguarda explicitamente o Mock responder!
+        cy.wait('@viaCepMock');
         cy.get(this.SELETORES.logradouroField).should('have.value', ruaEsperada);
         cy.get(this.SELETORES.numeroEnderecoField).type(numeroCasa);
     }

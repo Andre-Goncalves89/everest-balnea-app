@@ -55,7 +55,7 @@ describe('Funcionalidade: Captura de Leads (Formulário Everest Balnea)', () => 
         // DADO (Given) - O estado inicial do sistema
         // ==========================================
         // Dado que a página do formulário é acessada limpa antes de cada cenário
-        cy.intercept('GET', 'https://viacep.com.br/ws/*/json/', {
+        cy.intercept('GET', '**/viacep.com.br/ws/**', {
             statusCode: 200,
             body: {
                 cep: "02417040",
