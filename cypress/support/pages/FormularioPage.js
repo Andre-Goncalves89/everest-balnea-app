@@ -26,18 +26,20 @@ class FormularioPage {
     }
 
     preencherCepEValidarRua(cep, ruaEsperada, numeroCasa) {
-        // ==========================================
-        // CULTURA DE QUALIDADE: Validação com Regex (Shift-Left)
-        // ==========================================
-        // ^ indica o começo, \d+ exige 1 ou mais dígitos (números), $ indica o fim.
-        // Se a variável 'cep' tiver letras ou espaços, o teste para aqui com a mensagem customizada.
         const regexApenasNumeros = /^\d+$/; 
         expect(cep).to.match(regexApenasNumeros, 'Erro de Automação: O CEP enviado na massa de dados contém letras ou caracteres inválidos!');
 
-        // Lógica de digitar o cep, dar o blur e validar o logradouro
-        cy.get(this.SELETORES.cepField).type(cep).blur();
-        // CULTURA DE QUALIDADE: Aguarda explicitamente o Mock responder!
+        // Digita o CEP
+        cy.get(this.SELETORES.cepField).type(cep);
+        
+        // A FIX MÁGICA: Em vez de .blur(), clicamos fisicamente em outro campo
+        // Isso obriga o navegador fantasma do GitHub a disparar a busca do ViaCEP
+        cy.get(this.SELETORES.logradouroField).click();
+
+        // Aguarda explicitamente o Mock responder
         cy.wait('@viaCepMock');
+
+        // Validações
         cy.get(this.SELETORES.logradouroField).should('have.value', ruaEsperada);
         cy.get(this.SELETORES.numeroEnderecoField).type(numeroCasa);
     }

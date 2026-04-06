@@ -54,8 +54,9 @@ describe('Funcionalidade: Captura de Leads (Formulário Everest Balnea)', () => 
         // ==========================================
         // DADO (Given) - O estado inicial do sistema
         // ==========================================
-        // Dado que a página do formulário é acessada limpa antes de cada cenário
-        cy.intercept('GET', '**/viacep.com.br/ws/**', {
+        
+        // Interceptador Blindado: Captura QUALQUER chamada que contenha "viacep.com.br"
+        cy.intercept('GET', '**/viacep.com.br/**', {
             statusCode: 200,
             body: {
                 cep: "02417040",
@@ -66,6 +67,7 @@ describe('Funcionalidade: Captura de Leads (Formulário Everest Balnea)', () => 
             }
         }).as('viaCepMock');
 
+        // Dado que a página do formulário é acessada limpa antes de cada cenário
         formularioPage.acessarPagina();
     });
 
