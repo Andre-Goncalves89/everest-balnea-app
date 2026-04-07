@@ -2,15 +2,14 @@ name: Everest Balnea - Qualidade Total
 on: [push]
 
 jobs:
-    cypress-run:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout do Código
-              uses: actions/checkout@v4
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
 
-            - name: Instalar Dependências e Rodar Cypress
-              uses: cypress-io/github-action@v6
-              with:
-               # Inicia um servidor estático leve na porta 5500 igual ao seu Live Server
-                start:start: npx serve ./frontend -l tcp://0.0.0.0:5500
-                wait-on: 'http://localhost:5500'
+      - name: Instalar Dependências e Rodar Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          start: npx serve ./frontend -p 5500
+          wait-on: 'http://127.0.0.1:5500'
