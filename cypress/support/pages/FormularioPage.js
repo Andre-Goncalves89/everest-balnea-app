@@ -16,7 +16,7 @@ class FormularioPage {
 
     // 2. AÇÕES DA PÁGINA
     acessarPagina() {
-        cy.visit('/frontend/index.html');
+        cy.visit('/');
     }
 
     preencherDadosLead(nome, email, whatsapp) {
