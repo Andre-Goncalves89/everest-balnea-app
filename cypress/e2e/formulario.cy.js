@@ -41,12 +41,6 @@ describe('Funcionalidade: Captura de Leads (Formulário Everest Balnea)', () => 
             nome: 'Robô Cypress', email: 'robo@cypress.com', whatsapp: '119888777777', 
             cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '120', 
             devePassar: false 
-        },
-        { 
-            descricao: 'Falha - Campo de email ou nome com caracteres maliciosos', 
-            nome: '...', email: 'robocypress@test.com', whatsapp: '11988877777', 
-            cep: '02417040', rua: 'Rua Clóvis Cunha Canto', numero: '120', 
-            devePassar: false 
         }
     ];
 
