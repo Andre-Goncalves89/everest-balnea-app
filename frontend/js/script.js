@@ -89,4 +89,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-});
+
+    // ==========================================
+    // 3. LÓGICA DO FAQ (Acordeão)
+    // ==========================================
+    const accordions = document.querySelectorAll('.faq-accordion');
+
+    accordions.forEach(accordion => {
+        accordion.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('svg');
+
+            // Fecha todos os outros antes de abrir este (efeito de sanfona)
+            accordions.forEach(otherAccordion => {
+                if (otherAccordion !== this) {
+                    otherAccordion.nextElementSibling.classList.add('hidden');
+                    otherAccordion.querySelector('svg').classList.remove('rotate-180');
+                }
+            });
+
+            // Alterna a classe hidden do conteúdo deste acordeão
+            content.classList.toggle('hidden');
+            
+            // Gira o ícone
+            icon.classList.toggle('rotate-180');
+        });
+    });
+
+}); 
