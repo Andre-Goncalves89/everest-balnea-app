@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('https://everest-backend-fs5k.onrender.com/enviar-lead', {
+                const response = await fetch('https://api.everestbalnea.com.br/enviar-lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
